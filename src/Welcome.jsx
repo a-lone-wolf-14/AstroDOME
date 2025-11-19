@@ -4,7 +4,6 @@ import './Welcome.css';
 //import './Text.jsx'
 import SplitTextAnimator from './Text.jsx';
 import TargetCursor from './Cursor.jsx';
-import ContinueButton from './Button.jsx';
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
