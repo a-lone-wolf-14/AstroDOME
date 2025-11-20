@@ -46,7 +46,7 @@ export default function App() {
         poster='/0000.jpg'
         className="video-container"
       >
-        <source src="/videos/Mars3_PLL.webm" type="video/webm" />
+        <source src="https://pub-d02828e273b44062a2d7b141ace289ad.r2.dev/Mars3_PLL.webm" type="video/webm" />
       </video>
       
       {/* Overlay for better text readability (optional) */}
