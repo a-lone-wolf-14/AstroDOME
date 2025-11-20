@@ -20,7 +20,7 @@ export default function App() {
 
   const videoPlayback = (e) =>
   {
-    e.target.playbackRate=2.0;
+    e.target.playbackRate=1.0;
   };
 
   if (!showIntro) {
@@ -39,13 +39,14 @@ export default function App() {
         autoPlay
         muted
         playsInline
+        loop
         onLoadedMetadata={videoPlayback}
         onCanPlay={() => setvideoReady(true)}
         preload='auto'
         poster='/0000.jpg'
         className="video-container"
       >
-        <source src="/Mars_PLL.webm" type="video/webm" />
+        <source src="/Mars3_PLL.webm" type="video/webm" />
       </video>
       
       {/* Overlay for better text readability (optional) */}
