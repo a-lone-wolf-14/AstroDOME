@@ -18,9 +18,8 @@ export default function App() {
     }, 1000);
   };
 
-  const videoPlayback = (e) =>
-  {
-    e.target.playbackRate=1.0;
+  const videoPlayback = (e) => {
+    e.target.playbackRate = 1.0;
   };
 
   if (!showIntro) {
@@ -29,11 +28,10 @@ export default function App() {
 
   return (
     <div
-      className={`fixed inset-0 flex items-center justify-center transition-opacity duration-1000 ${
-        fadeOut ? 'opacity-0' : 'opacity-100'
-      }`}
+      className={`fixed inset-0 flex items-center justify-center transition-opacity duration-1000 ${fadeOut ? 'opacity-0' : 'opacity-100'
+        }`}
     >
-      <TargetCursor spinDuration={3} hideDefaultCursor={true}/>
+      <TargetCursor spinDuration={3} hideDefaultCursor={true} />
       {/* Video Background */}
       <video
         autoPlay
@@ -46,12 +44,12 @@ export default function App() {
         poster='/0000.jpg'
         className="video-container"
       >
-        <source src="https://pub-d02828e273b44062a2d7b141ace289ad.r2.dev/Mars3_PLL.webm" type="video/webm" />
+        <source src="https://pub-d02828e273b44062a2d7b141ace289ad.r2.dev/Mars4_PLL.webm" type="video/webm" />
       </video>
-      
+
       {/* Overlay for better text readability (optional) */}
       <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-      
+
       <div className="text-center relative z-10">
         <div className="animate-bounce-slow mb-8">
           <div className="w-24 h-24 mx-auto bg-white rounded-full flex items-center justify-center shadow-2xl">
@@ -62,17 +60,17 @@ export default function App() {
         <div className='heading-container'>
           <p>
             <div className='heading1'><SplitTextAnimator text="Welcome to " animationType='lines' /></div>
-            <div className='heading2'><SplitTextAnimator text="AstroDOME" animationType='chars'/></div>
+            <div className='heading2'><SplitTextAnimator text="AstroDOME" animationType='chars' /></div>
           </p>
           <p className='heading3'><SplitTextAnimator text="based on INSIGHT, CURIOSITY, PERSEVERANCE" animationType='lines' /></p>
-        </div>        
-        
+        </div>
+
         <div className="flex gap-2 justify-center animate-fade-in-delay">
           <div className="w-3 h-3 bg-white rounded-full animate-bounce" style={{ animationDelay: '0s' }}></div>
           <div className="w-3 h-3 bg-white rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
           <div className="w-3 h-3 bg-white rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
         </div>
-        
+
         <button
           className="continue-button"
           onMouseEnter={() => setIsHovered(true)}
@@ -81,7 +79,7 @@ export default function App() {
           {!isHovered ? "Let's GO!" : 'Continue'}
         </button>
       </div>
-      
+
       <style>{`
         @keyframes bounce-slow {
           0%, 100% {
@@ -163,7 +161,7 @@ function MainContent() {
           </div>
         </div>
       </div>
-      
+
       <style>{`
         @keyframes fade-in {
           from {
