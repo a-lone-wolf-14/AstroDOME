@@ -1,37 +1,39 @@
 import { useState, useEffect } from 'react';
 import './Welcome.css';
+import './Button.css';
 //import { TypeAnimation } from 'react-type-animation';
 //import './Text.jsx'
 import SplitTextAnimator from './Text.jsx';
 import TargetCursor from './Cursor.jsx';
+import { useNavigate } from 'react-router-dom';
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
   const [videoReady, setvideoReady] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "AstroDOME | Welcome";
+  }, []);
 
   const handleProceed = () => {
     setFadeOut(true);
-    setTimeout(() => {
-      setShowIntro(false);
-    }, 1000);
+    setTimeout(() => setShowIntro(false), 1000);
+    navigate('/select');
   };
 
   const videoPlayback = (e) => {
     e.target.playbackRate = 1.0;
   };
 
-  if (!showIntro) {
-    return <MainContent />;
-  }
-
   return (
     <div
       className={`fixed inset-0 flex items-center justify-center transition-opacity duration-1000 ${fadeOut ? 'opacity-0' : 'opacity-100'
         }`}
     >
-      <TargetCursor spinDuration={3} hideDefaultCursor={true} />
+      <TargetCursor spinDuration={3} hideDefaultCursor={true} parallaxOn={true} />
       {/* Video Background */}
       <video
         autoPlay
@@ -62,7 +64,7 @@ export default function App() {
             <div className='heading1'><SplitTextAnimator text="Welcome to " animationType='lines' /></div>
             <div className='heading2'><SplitTextAnimator text="AstroDOME" animationType='chars' /></div>
           </p>
-          <p className='heading3'><SplitTextAnimator text="based on INSIGHT, CURIOSITY, PERSEVERANCE" animationType='lines' /></p>
+          <p className='heading3'><SplitTextAnimator text="based on NASA InSight API, Data by- Curiosity, Perseverance" animationType='lines' /></p>
         </div>
 
         <div className="flex gap-2 justify-center animate-fade-in-delay">
@@ -75,6 +77,7 @@ export default function App() {
           className="continue-button"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
+          onClick={handleProceed}
         >
           {!isHovered ? "Let's GO!" : 'Continue'}
         </button>
@@ -136,48 +139,6 @@ export default function App() {
 
 function MainContent() {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8">
-      <div className="max-w-2xl w-full">
-        <div className="bg-white rounded-2xl shadow-xl p-8 animate-fade-in">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            Your Main Application
-          </h2>
-          <p className="text-gray-600 text-lg mb-6">
-            The intro animation has finished. This is your main content area where you can build your application.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg p-6">
-              <h3 className="font-semibold text-purple-800 mb-2">Feature 1</h3>
-              <p className="text-sm text-purple-600">Amazing capabilities</p>
-            </div>
-            <div className="bg-gradient-to-br from-pink-100 to-orange-100 rounded-lg p-6">
-              <h3 className="font-semibold text-pink-800 mb-2">Feature 2</h3>
-              <p className="text-sm text-pink-600">Incredible performance</p>
-            </div>
-            <div className="bg-gradient-to-br from-orange-100 to-yellow-100 rounded-lg p-6">
-              <h3 className="font-semibold text-orange-800 mb-2">Feature 3</h3>
-              <p className="text-sm text-orange-600">Seamless experience</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <style>{`
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .animate-fade-in {
-          animation: fade-in 0.8s ease-out;
-        }
-      `}</style>
-    </div>
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8"></div>
   );
 }

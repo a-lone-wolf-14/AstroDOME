@@ -1,5 +1,4 @@
-.video-container
-{
+.video-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -20,48 +19,65 @@
   src: url('/Product Sans Regular.woff2');
 }
 
-.heading1
-{
+.heading1 {
   font-family: 'Times New Roman', Times, serif;
   font-size: 40px;
   font-weight: 500;
   padding: auto;
 }
 
-.heading2
-{
+.heading2 {
+  /* Font Size and Weight (text-6xl md:text-9xl, font-black) */
+  font-size: 10rem;
+  /* Equivalent to text-6xl (64px) */
+  font-weight: 900;
+  /* Equivalent to font-black */
+
+  /* Responsive adjustment (md:text-9xl) - Requires a media query */
+  /* Check your specific viewport breakpoints for exact match */
+  /* Example: for a medium screen (Tailwind's 'md' is typically 768px) */
+  /* @media (min-width: 768px) { 
+        font-size: 8rem; 
+    } */
+
+  /* Custom Font Family (font-display) */
+  /* Replace 'Orbitron' with your actual font if different */
   font-family: 'Kospix';
-  font-size: 100px;
-  padding: auto;
+
+  /* Letter Spacing (tracking-tighter) */
+  letter-spacing: -0.05em;
+
+  /* Gradient Text Color (text-transparent, bg-clip-text, bg-gradient-to-r) */
+  background-image: linear-gradient(to right,
+      rgb(255, 255, 255),
+      /* from-white */
+      rgb(233 227 254),
+      /* via-purple-200 (approximate HSL conversion from your theme) */
+      rgb(224 242 254)
+      /* to-cyan-200 (approximate HSL conversion from your theme) */
+    );
+  color: rgb(2, 213, 192);
+  /* Makes the text transparent */
+  -webkit-background-clip: text;
+  /* Clip background to text outline (for WebKit browsers) */
+  background-clip: text;
+  /* Clip background to text outline (standard) */
+
+  /* Drop Shadow/Glow (drop-shadow-[...]) */
+  /* The CSS filter equivalent of a drop-shadow utility */
+  filter: drop-shadow(0 0 15px rgb(0, 68, 255));
+
+  /* Text rendering improvements */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.heading3
-{
-  font-family: Arial, Helvetica, sans-serif;
-  padding: auto;
-}
-
-.continue-button
-{
-  padding: auto;
-  transition: background-color 0.3s ease;
-  border-radius: 50px;
-  width: 200px;
-  height: 100px;
+.heading3 {
   font-family: 'Google';
-  font-size: 30px;
+  padding: auto;
 }
 
-.continue-button:hover
-{
-  background-color: #9bbbef;
-  color: #062e6f;
-  font-family: 'Google';
-  font-size: 30px;
-}
-
-.continue-text
-{
+.continue-text {
   font-family: 'Google';
   font-size: 30px;
 }

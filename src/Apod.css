@@ -1,0 +1,16 @@
+.continue-button {
+    padding: auto;
+    transition: background-color 0.3s ease;
+    border-radius: 50px;
+    width: 200px;
+    height: 100px;
+    font-family: 'Google';
+    font-size: 30px;
+}
+
+.continue-button:hover {
+    background-color: #9bbbef;
+    color: #062e6f;
+    font-family: 'Google';
+    font-size: 30px;
+}

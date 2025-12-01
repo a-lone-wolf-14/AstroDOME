@@ -1,0 +1,138 @@
+@font-face {
+    font-family: 'Google';
+    src: url('/Product Sans Regular.woff2');
+}
+
+.card {
+    width: 99vw;
+    height: 50vh;
+    border-radius: 4px;
+    background: #212121;
+    display: flex;
+    gap: 5px;
+    padding: .4em;
+}
+
+.card-apod {
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all .5s;
+    background: #212121;
+    border: 1px solid #ff5a91;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/Milky-Way-Galaxy-Earth.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5);
+}
+
+.card-apod:hover {
+    flex: 10;
+    filter: brightness(1);
+}
+
+.card-apod span {
+    min-width: 14em;
+    padding: .5em;
+    font-family: 'Google';
+
+    text-align: center;
+    transform: rotate(-90deg);
+    transition: all .5s;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: .1em;
+}
+
+.card-apod:hover span {
+    font-family: 'Google';
+    color: #ffffff;
+    transform: rotate(0);
+}
+
+.card-neows {
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all .5s;
+    background: #212121;
+    border: 1px solid #ff5a91;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/24BE16BB-BAFE-426D-A1F8D416AD298511_source.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5);
+}
+
+.card-neows:hover {
+    flex: 10;
+    filter: brightness(1);
+}
+
+.card-neows span {
+    min-width: 14em;
+    padding: .5em;
+    font-family: 'Google';
+    text-align: center;
+    transform: rotate(-90deg);
+    transition: all .5s;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: .1em;
+}
+
+.card-neows:hover span {
+    font-family: 'Google';
+    color: #ffffff;
+    transform: rotate(0);
+}
+
+.card-donki {
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all .5s;
+    background: #212121;
+    border: 1px solid #ff5a91;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/1920x1080.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5);
+}
+
+.card-donki:hover {
+    flex: 10;
+    filter: brightness(1);
+}
+
+.card-donki span {
+    min-width: 14em;
+    padding: .5em;
+    font-family: 'Google';
+    text-align: center;
+    transform: rotate(-90deg);
+    transition: all .5s;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: .1em;
+}
+
+.card-donki:hover span {
+    font-family: 'Google';
+    color: #ffffff;
+    transform: rotate(0);
+}
